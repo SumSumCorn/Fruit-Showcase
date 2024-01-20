@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap');
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Rubik Burned', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background: url('assets/centerpoint.png'); */
+}
+* {
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: linear-gradient(
+    to right,
+    #6dd5fa,
+    #ff758c
+  ); /* Gradient background */
+}
+.container {
+  margin: auto;
+  text-align: center;
+  width: 80%;
+  height: 100svh;
+  max-width: 1200px;
+}
+
+#fruit-container {
+  position: relative;
+  width: 1100px;
+  height: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+  overflow: hidden;
+  /* height: calc(width); */
+  margin-bottom: 20px;
+  /* overflow: hidden; */
+  /* animation: rotate 10s infinite linear; */
+  /* background: url('assets/centerpoint.png'); */
+}
+
+/* #fruit-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 20px yellow;
+  position: absolute;
+  top: 0;
+  left: 0;
+} */
+
+.main-img {
+  position: absolute;
+  inset: 50%;
+  translate: -50% -50%;
+  width: 1000px;
+  height: auto;
+}
+
+.img-background {
+  animation: rotate 10s linear infinite;
+  transform-origin: 50% 50%;
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+  /* from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  } */
+}
+#button-container {
+  width: 100%;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.fruit-select {
+  margin: 1rem 0.5rem;
+  padding: 10px 20px;
+  border: none;
+  background-image: linear-gradient(
+    to right,
+    #6dd5fa,
+    #ff758c
+  ); /* Gradient background */
+  color: white; /* White text color */
+  text-transform: uppercase; /* Uppercase text */
+  font-size: 1.5rem;
+  font-weight: bold; /* Bold font */
+  border-radius: 30px; /* Rounded corners */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16); /* Subtle shadow */
+  cursor: pointer; /* Pointer cursor on hover */
+  outline: none; /* Remove outline */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition for hover effects */
+}
+
+.fruit-select:hover {
+  transform: translateY(-2px); /* Slightly raise the button */
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2); /* Increase shadow size */
+}
+
+.fruit-select:active {
+  transform: translateY(1px); /* Slightly lower the button */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Decrease shadow size */
+}
+.toggle-button {
+  padding: 10px 20px;
+  border: 2px solid #4caf50; /* Green border */
+  background-color: #f8f8f8; /* Light grey background */
+  color: #4caf50; /* Green text */
+  text-transform: uppercase; /* Uppercase text */
+  font-weight: bold; /* Bold font */
+  border-radius: 5px; /* Slightly rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  outline: none; /* Remove outline */
+  transition: background-color 0.2s, color 0.2s; /* Smooth transition for hover effects */
+}
+
+.toggle-button:hover {
+  background-color: #4caf50; /* Green background */
+  color: white; /* White text */
+}
+
+#music-button {
+  font-size: 3rem;
+  position: fixed;
+  top: 1rem;
+  right: 2rem;
+}
