@@ -2,14 +2,10 @@
 
 body,
 html {
-  height: 100%;
+  height: 100svh;
   margin: 0;
+  padding: 0;
   font-family: 'Rubik Burned', Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* background: url('assets/centerpoint.png'); */
 }
 * {
   box-sizing: border-box;
@@ -25,85 +21,82 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to right,
     #6dd5fa,
     #ff758c
-  ); /* Gradient background */
+  ); Gradient background
+  background-repeat: no-repeat; */
 }
 .container {
-  margin: auto;
-  text-align: center;
-  width: 80%;
-  height: 100svh;
-  max-width: 1200px;
+  width: 100%;
+  height: 100%;
+  /* max-width: 1200px; */
 }
 
 #fruit-container {
   position: relative;
-  width: 1100px;
-  height: 1100px;
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
   padding: 2rem;
   overflow: hidden;
-  /* height: calc(width); */
-  margin-bottom: 20px;
-  /* overflow: hidden; */
-  /* animation: rotate 10s infinite linear; */
-  /* background: url('assets/centerpoint.png'); */
 }
-
-/* #fruit-container img {
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
-  box-shadow: 0 0 20px yellow;
-  position: absolute;
-  top: 0;
-  left: 0;
-} */
 
 .main-img {
   position: absolute;
   inset: 50%;
   translate: -50% -50%;
-  width: 1000px;
-  height: auto;
+  width: 800px;
+  height: 800px;
 }
-
 .img-background {
   animation: rotate 10s linear infinite;
   transform-origin: 50% 50%;
+  width: calc(max(100vw, 100vh) * 1.5);
+  height: calc(max(100vw, 100vh) * 1.5);
 }
 @keyframes rotate {
   100% {
     transform: rotate(360deg);
   }
-  /* from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  } */
 }
+
+#main-fruit:hover {
+  animation: shake 0.5s ease;
+  animation-iteration-count: infinite;
+  /* opacity: 0.9; */
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+}
+
 #button-container {
+  position: absolute;
   width: 100%;
+  bottom: 0;
+  height: auto;
   display: flex;
-  /* justify-content: space-between; */
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 1rem 0;
+  margin-bottom: 4rem;
 }
 
 .fruit-select {
   margin: 1rem 0.5rem;
   padding: 10px 20px;
   border: none;
-  background-image: linear-gradient(
-    to right,
-    #6dd5fa,
-    #ff758c
-  ); /* Gradient background */
+  background-color: coral;
   color: white; /* White text color */
   text-transform: uppercase; /* Uppercase text */
   font-size: 1.5rem;
@@ -113,6 +106,9 @@ body {
   cursor: pointer; /* Pointer cursor on hover */
   outline: none; /* Remove outline */
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition for hover effects */
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 }
 
 .fruit-select:hover {
@@ -124,27 +120,13 @@ body {
   transform: translateY(1px); /* Slightly lower the button */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Decrease shadow size */
 }
-.toggle-button {
-  padding: 10px 20px;
-  border: 2px solid #4caf50; /* Green border */
-  background-color: #f8f8f8; /* Light grey background */
-  color: #4caf50; /* Green text */
-  text-transform: uppercase; /* Uppercase text */
-  font-weight: bold; /* Bold font */
-  border-radius: 5px; /* Slightly rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  outline: none; /* Remove outline */
-  transition: background-color 0.2s, color 0.2s; /* Smooth transition for hover effects */
-}
-
-.toggle-button:hover {
-  background-color: #4caf50; /* Green background */
-  color: white; /* White text */
-}
 
 #music-button {
   font-size: 3rem;
   position: fixed;
   top: 1rem;
   right: 2rem;
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 }
